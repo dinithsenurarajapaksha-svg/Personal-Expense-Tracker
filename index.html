@@ -1,0 +1,182 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Personal Expense Tracker</title>
+
+    <!-- CSS File -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- JavaScript File -->
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <h2>Personal Expense Tracker</h2>
+    </nav>
+
+    <main class="container">
+
+        <h1>My Dashboard</h1>
+        <p class="subtitle">Manage your income and expenses easily.</p>
+
+        <!-- Summary Cards -->
+        <section class="summary-cards">
+
+            <div class="card income-card">
+                <h3>Total Income</h3>
+                <p id="total-income">LKR 0.00</p>
+            </div>
+
+            <div class="card expense-card">
+                <h3>Total Expenses</h3>
+                <p id="total-expenses">LKR 0.00</p>
+            </div>
+
+            <div class="card balance-card">
+                <h3>Current Balance</h3>
+                <p id="current-balance">LKR 0.00</p>
+            </div>
+
+        </section>
+
+        <!-- Transaction Form -->
+        <section class="form-section">
+
+            <h2>Add New Transaction</h2>
+
+            <form id="transaction-form">
+
+                <div class="form-group">
+                    <label for="type">Transaction Type</label>
+
+                    <select id="type" required>
+                        <option value="">Select Type</option>
+                        <option value="Income">Income</option>
+                        <option value="Expense">Expense</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="description">Description</label>
+
+                    <input
+                        type="text"
+                        id="description"
+                        placeholder="Enter description"
+                        required
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="amount">Amount (LKR)</label>
+
+                    <input
+                        type="number"
+                        id="amount"
+                        placeholder="Enter amount"
+                        min="0.01"
+                        step="0.01"
+                        required
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="category">Category</label>
+
+                    <select id="category" required>
+                        <option value="">Select Category</option>
+                        <option value="Allowance">Allowance</option>
+                        <option value="Salary">Salary</option>
+                        <option value="Food">Food</option>
+                        <option value="Transport">Transport</option>
+                        <option value="Education">Education</option>
+                        <option value="Entertainment">Entertainment</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="date">Date</label>
+
+                    <input
+                        type="date"
+                        id="date"
+                        required
+                    >
+                </div>
+
+                <div class="form-buttons">
+                    <button type="submit" class="add-btn">
+                        Add Transaction
+                    </button>
+
+                    <button type="reset" class="clear-btn">
+                        Clear
+                    </button>
+                </div>
+
+            </form>
+
+        </section>
+
+        <!-- Transaction History -->
+        <section class="history-section">
+
+            <h2>Transaction History</h2>
+
+            <!-- Search and Filter -->
+            <div class="filter-section">
+
+                <input
+                    type="text"
+                    id="search-input"
+                    placeholder="Search transactions..."
+                >
+
+                <select id="filter-type">
+                    <option value="All">All Transactions</option>
+                    <option value="Income">Income Only</option>
+                    <option value="Expense">Expenses Only</option>
+                </select>
+
+            </div>
+
+            <!-- Transaction Table -->
+            <div class="table-container">
+
+                <table>
+
+                    <thead>
+                        <tr>
+                            <th>Date</th>
+                            <th>Description</th>
+                            <th>Type</th>
+                            <th>Category</th>
+                            <th>Amount</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="transaction-list">
+
+                        <!-- JavaScript will add transactions here -->
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+    </main>
+
+</body>
+</html>
